@@ -47,7 +47,7 @@ public class Patient {
    } else
     System.out.println("Patient is a newborn");
   }
-  if (age <= 1) {
+  if (age>0 && age <= 1) {
    if (respiratoryRate >= 20 && respiratoryRate <= 30 &&
     heartRate >= 80 && heartRate <= 140 &&
     bp >= 70 && bp <= 100 &&
