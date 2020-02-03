@@ -50,6 +50,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         SplitPane.setPreferredSize(new java.awt.Dimension(700, 500));
 
+        leftjPanel.setBackground(new java.awt.Color(204, 255, 255));
+
         CreateBtn.setText("Create Vital Sign");
         CreateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +102,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addGroup(leftjPanelLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(abnormaljButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(ViewBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(CreateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -125,6 +127,8 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         SplitPane.setLeftComponent(leftjPanel);
+
+        rightjPanel.setBackground(new java.awt.Color(204, 255, 255));
 
         javax.swing.GroupLayout rightjPanelLayout = new javax.swing.GroupLayout(rightjPanel);
         rightjPanel.setLayout(rightjPanelLayout);

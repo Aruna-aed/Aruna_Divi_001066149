@@ -43,6 +43,7 @@ public class CreateVitalsJPanel extends javax.swing.JPanel {
         savejButton = new javax.swing.JButton();
         createVitalSignsjLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(204, 255, 255));
         setPreferredSize(new java.awt.Dimension(700, 500));
 
         tempjLabel.setText("Temeperature");

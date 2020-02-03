@@ -59,12 +59,14 @@ public void populateTable(){
         updatejButton = new javax.swing.JButton();
         confirmjButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 255, 255));
         setEnabled(false);
 
         viewVitalSignsjLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         viewVitalSignsjLabel.setForeground(new java.awt.Color(0, 51, 204));
         viewVitalSignsjLabel.setText("View Vital Signs");
 
+        VitalSignsjTable.setBackground(new java.awt.Color(0, 204, 204));
         VitalSignsjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -73,6 +75,7 @@ public void populateTable(){
                 "Date", "Blood Pressure"
             }
         ));
+        VitalSignsjTable.setGridColor(new java.awt.Color(0, 204, 204));
         jScrollPane1.setViewportView(VitalSignsjTable);
 
         viewDetailsjButton.setText("View Details");
@@ -128,16 +131,13 @@ public void populateTable(){
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(252, 252, 252)
                         .addComponent(viewVitalSignsjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(254, 254, 254)
                             .addComponent(viewDetailsjButton)
                             .addGap(46, 46, 46)
                             .addComponent(updatejButton)
@@ -156,8 +156,11 @@ public void populateTable(){
                                 .addComponent(pulseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(bloodPressureTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(temperatureTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(confirmjButton)))))
-                .addContainerGap(80, Short.MAX_VALUE))
+                                .addComponent(confirmjButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
