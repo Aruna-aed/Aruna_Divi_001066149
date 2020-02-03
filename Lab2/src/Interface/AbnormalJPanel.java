@@ -26,13 +26,15 @@ public class AbnormalJPanel extends javax.swing.JPanel {
         this.MAX_BP=MAX_BP;
         this.MIN_BP=MIN_BP;
         populateTable();
-        
-            
-            temperatureTextField.setEnabled(false);
-            bloodPressureTextField.setEnabled(false);
-            pulseTextField.setEnabled(false);
-            dateTextField.setEnabled(false);        
+        setAllEnabled(false);
+      
     }
+        private void setAllEnabled(boolean b){
+        temperatureTextField.setEnabled(b);
+        bloodPressureTextField.setEnabled(b);
+        pulseTextField.setEnabled(b);
+        dateTextField.setEnabled(b);
+        }
     public void populateTable(){
     DefaultTableModel dtm = (DefaultTableModel)VitalSignsjTable.getModel();
     dtm.setRowCount(0);
@@ -218,10 +220,8 @@ public class AbnormalJPanel extends javax.swing.JPanel {
             pulseTextField.setText(String.valueOf(vs.getPulse()));
             dateTextField.setText(vs.getDate());
             
-            temperatureTextField.setEnabled(false);
-            bloodPressureTextField.setEnabled(false);
-            pulseTextField.setEnabled(false);
-            dateTextField.setEnabled(false);
+        setAllEnabled(false);
+
 
         }
         else
@@ -248,10 +248,8 @@ public class AbnormalJPanel extends javax.swing.JPanel {
         if(selectedrow>=0)
         {
 
-            temperatureTextField.setEnabled(true);
-            bloodPressureTextField.setEnabled(true);
-            pulseTextField.setEnabled(true);
-            dateTextField.setEnabled(true);
+        setAllEnabled(true);
+
 
             VitalSigns vs = (VitalSigns)VitalSignsjTable.getValueAt(selectedrow, 0);
 
@@ -273,10 +271,7 @@ public class AbnormalJPanel extends javax.swing.JPanel {
                 if(selectedrow>=0)
         {
             
-            temperatureTextField.setEnabled(true);
-            bloodPressureTextField.setEnabled(true);
-            pulseTextField.setEnabled(true);
-            dateTextField.setEnabled(true);
+        setAllEnabled(true);
 
             
           VitalSigns vs = (VitalSigns)VitalSignsjTable.getValueAt(selectedrow, 0);
@@ -286,10 +281,8 @@ public class AbnormalJPanel extends javax.swing.JPanel {
           vs.setDate(dateTextField.getText());
           
           populateTable();
-            temperatureTextField.setEnabled(false);
-            bloodPressureTextField.setEnabled(false);
-            pulseTextField.setEnabled(false);
-            dateTextField.setEnabled(false);
+        setAllEnabled(false);
+
           
         
         }else{

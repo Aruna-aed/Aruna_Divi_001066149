@@ -24,6 +24,13 @@ public class ViewVitalsJPanel extends javax.swing.JPanel {
         this.vsh=vsh;
         populateTable();
     }
+    private void setAllEnabled(boolean b){
+        temperatureTextField.setEnabled(b);
+        bloodPressureTextField.setEnabled(b);
+        pulseTextField.setEnabled(b);
+        dateTextField.setEnabled(b);
+
+    }
 public void populateTable(){
     DefaultTableModel dtm = (DefaultTableModel)VitalSignsjTable.getModel();
     dtm.setRowCount(0);
@@ -232,10 +239,7 @@ public void populateTable(){
                 if(selectedrow>=0)
         {
             
-            temperatureTextField.setEnabled(true);
-            bloodPressureTextField.setEnabled(true);
-            pulseTextField.setEnabled(true);
-            dateTextField.setEnabled(true);
+setAllEnabled(true);
 
             
            VitalSigns vs = (VitalSigns)VitalSignsjTable.getValueAt(selectedrow, 0);
@@ -257,10 +261,7 @@ public void populateTable(){
                 if(selectedrow>=0)
         {
             
-            temperatureTextField.setEnabled(true);
-            bloodPressureTextField.setEnabled(true);
-            pulseTextField.setEnabled(true);
-            dateTextField.setEnabled(true);
+setAllEnabled(true);
 
             
            VitalSigns vs = (VitalSigns)VitalSignsjTable.getValueAt(selectedrow, 0);
@@ -271,10 +272,8 @@ public void populateTable(){
           vs.setDate(dateTextField.getText());
           
           populateTable();
-            temperatureTextField.setEnabled(false);
-            bloodPressureTextField.setEnabled(false);
-            pulseTextField.setEnabled(false);
-            dateTextField.setEnabled(false);
+           setAllEnabled(false);
+
           
         
         }else{
