@@ -45,4 +45,12 @@ public class ProductDirectory {
   }
   return null;
  }
+ public boolean searchProduct(String name) {
+  for (Product prod: this.productDirectory) {
+   if (prod.getName().equalsIgnoreCase(name)) {
+    return true;
+   }
+  }
+  return false;
+ }
 }

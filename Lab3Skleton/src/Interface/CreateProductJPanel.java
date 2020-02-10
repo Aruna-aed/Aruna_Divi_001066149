@@ -143,6 +143,12 @@ public class CreateProductJPanel extends javax.swing.JPanel {
                 return;
                 
             }
+                   boolean result1 = prodDir.searchProduct(name);
+                   if(result1==true){
+            JOptionPane.showMessageDialog(null, "Product already exists");
+            return;
+
+            }
         String priceText = txtPrice.getText();
         double price =0;
         try{

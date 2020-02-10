@@ -72,6 +72,7 @@ public class ViewPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtDesc = new javax.swing.JTextField();
         backjButton = new javax.swing.JButton();
+        canceljButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(153, 153, 255));
 
@@ -110,6 +111,13 @@ public class ViewPanel extends javax.swing.JPanel {
             }
         });
 
+        canceljButton.setText("Cancel");
+        canceljButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                canceljButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,8 +148,10 @@ public class ViewPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnUpdate)))))
-                .addContainerGap(135, Short.MAX_VALUE))
+                                .addComponent(btnUpdate)
+                                .addGap(26, 26, 26)
+                                .addComponent(canceljButton)))))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,7 +178,8 @@ public class ViewPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
-                    .addComponent(btnUpdate))
+                    .addComponent(btnUpdate)
+                    .addComponent(canceljButton))
                 .addGap(0, 81, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -216,11 +227,28 @@ public class ViewPanel extends javax.swing.JPanel {
 layout.previous(this.panel);
     }//GEN-LAST:event_backjButtonActionPerformed
 
+    private void canceljButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_canceljButtonActionPerformed
+        // TODO add your handling code here:
+         product.setName(txtProdName.getText());
+            product.setPrice(Double.parseDouble(txtPrice.getText()));
+            product.setAvailNum(Integer.parseInt(txtAvailablity.getText()));
+            product.setDescription(txtDesc.getText());
+            
+            txtAvailablity.setEditable(true);
+            txtPrice.setEditable(true);
+            txtProdName.setEditable(true);
+            txtDesc.setEnabled(true);
+            btnSave.setEnabled(true);
+            btnUpdate.setEnabled(false);
+        
+    }//GEN-LAST:event_canceljButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backjButton;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton canceljButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAccNo;
     private javax.swing.JLabel lblBankName;
