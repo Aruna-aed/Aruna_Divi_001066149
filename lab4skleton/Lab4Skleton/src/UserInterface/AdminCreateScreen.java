@@ -57,7 +57,7 @@ public class AdminCreateScreen extends javax.swing.JPanel {
     
      private boolean passwordValidation(){
         
-        pattern_1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*_]).{6,}$");
+        pattern_1 = Pattern.compile("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*_]).{6,15}$");
         matcher_1=pattern_1.matcher(txtPword.getText());
         return matcher_1.matches();
     }
@@ -94,6 +94,8 @@ if (password.equals(rePassword)){
         radioSupplier = new javax.swing.JRadioButton();
         btnBack = new javax.swing.JButton();
         resetjButton = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 255, 255));
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +215,11 @@ if (password.equals(rePassword)){
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
       
-        
+        String name = txtUser.getText();
+        String pwd = txtPword.getText();
+        if(name.equals("")||pwd.equals("")){
+            JOptionPane.showMessageDialog(null, "Please provide Username/Password");
+        }
         
         if (usernameValidation()==false){
     txtUser.setBorder(BorderFactory.createLineBorder(Color.RED));
@@ -253,16 +259,18 @@ if(radioSupplier.isSelected()==true){
    SupplierDirectory supDir= admin.getSuppDir();
    Supplier s=supDir.addSupplier(supPassword,supUsername);
        JOptionPane.showMessageDialog(null, "Supplier added successfully");
+       txtUser.setText("");
+    txtPword.setText("");
+    txtRePword.setText("");
+    radioCustomer.setSelected(false);
+    radioSupplier.setSelected(false);
        
-         String name = txtUser.getText();
-        String pwd = txtPword.getText();
-        if(name.equals("")||pwd.equals("")){
-            JOptionPane.showMessageDialog(null, "Please provide Username/Password");
-        }
+      
       
 
    
-}   
+}
+   
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void radioCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioCustomerActionPerformed
@@ -315,11 +323,7 @@ if(radioSupplier.isSelected()==true){
 
     private void txtPwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPwordActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
-     
+
     }//GEN-LAST:event_txtPwordActionPerformed
 
     
