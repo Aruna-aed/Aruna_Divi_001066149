@@ -41,10 +41,13 @@ public class LoginScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtPword = new javax.swing.JTextField();
         btnSubmit = new javax.swing.JButton();
         comboUser = new javax.swing.JComboBox<>();
         txtTitle = new javax.swing.JLabel();
+        txtPword = new javax.swing.JPasswordField();
+        showjCheckBox = new javax.swing.JCheckBox();
+
+        setBackground(new java.awt.Color(204, 204, 255));
 
         btnSubmit.setText("Login");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +64,13 @@ public class LoginScreen extends javax.swing.JPanel {
 
         txtTitle.setText("Supplier Login Screen");
 
+        showjCheckBox.setText("show password");
+        showjCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showjCheckBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,14 +80,15 @@ public class LoginScreen extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addComponent(btnSubmit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(102, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(showjCheckBox)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtPword)
-                                .addComponent(comboUser, 0, 166, Short.MAX_VALUE))
-                            .addComponent(txtTitle))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(comboUser, 0, 166, Short.MAX_VALUE)
+                                .addComponent(txtTitle)
+                                .addComponent(txtPword)))))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,11 +97,13 @@ public class LoginScreen extends javax.swing.JPanel {
                 .addComponent(txtTitle)
                 .addGap(18, 18, 18)
                 .addComponent(comboUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtPword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(txtPword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(showjCheckBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSubmit)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,6 +126,17 @@ public class LoginScreen extends javax.swing.JPanel {
     private void comboUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboUserActionPerformed
+
+    private void showjCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showjCheckBoxActionPerformed
+        // TODO add your handling code here:
+        if(showjCheckBox.isSelected()){
+            txtPword.setEchoChar((char)0);
+        }
+        else{
+            txtPword.setEchoChar('*');
+        }
+       
+    }//GEN-LAST:event_showjCheckBoxActionPerformed
 
     
     private void initialize(){
@@ -143,7 +167,8 @@ public class LoginScreen extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;
     private javax.swing.JComboBox<Object> comboUser;
-    private javax.swing.JTextField txtPword;
+    private javax.swing.JCheckBox showjCheckBox;
+    private javax.swing.JPasswordField txtPword;
     private javax.swing.JLabel txtTitle;
     // End of variables declaration//GEN-END:variables
 }
